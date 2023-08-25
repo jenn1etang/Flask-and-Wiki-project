@@ -13,7 +13,9 @@ def home():
 
 @app.route('/about')
 def about():
-    return "I am still working on this"
+    search_term = 'About Wikipedia'
+    page = get_page(search_term)
+    return render_template("about.html", page=page)
 
 
 @app.route('/search', methods=['POST', 'GET'])
